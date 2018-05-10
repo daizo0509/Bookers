@@ -12,6 +12,7 @@ class BooksController < ApplicationController
   end
 
   def edit
+  	  @book = Post.find(params[:id])
   end
 
   def create
