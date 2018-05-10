@@ -11,8 +11,16 @@
       <tr>
         <td class="title"><%= book.title %></td>
         <td class="body"><%= book.body %></td>
-      </tr>
+        <td>
+          <%= link_to"Edit", edit_book_path(book.id) %>
+          <%= link_to"Show", book_path(book.id) %>
+          <%= link_to"Dstroy", book_path(book.id), method: :delete, "data-confirm" =>"本当に削除しますか？" %>
+        </td>
       <% end %>
+      </tr>
+
+      
+
     </tbody>
 </table> 
 <h2>New Books</h2>
