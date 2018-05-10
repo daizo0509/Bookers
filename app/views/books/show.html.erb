@@ -2,3 +2,6 @@
 <div><b>Title:</b><%= @book.title %></div>
 
 <div><b>Body:</b><%= @book.body %></div>
+
+<%= link_to"Edit", edit_book_path(@book) %>
+<%= link_to"Back", new_book_path(@book) %>
