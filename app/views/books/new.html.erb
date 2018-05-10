@@ -1,2 +1,28 @@
-<h1>Books#new</h1>
-<p>Find me in app/views/books/new.html.erb</p>
+<h1>Books</h1>
+<table>
+	<thead>
+	  <tr>
+        <th>Title</th>
+        <th>Body</th>
+     </tr>
+    </thead>
+    <tbody>
+      <% @books.each do |book| %>
+      <tr>
+        <td class="title"></td><%= book.title %>
+        <td class="body"></td><%= book.body %>
+      </tr>
+      <% end %>
+    </tbody>
+</table> 
+<h2>New Books</h2>
+<%= form_for(@book) do |f| %>
+    
+    <h4>Title</h4>
+    <%= f.text_field :title %>
+
+    <h4>Body</h4>
+    <%= f.text_area :body %>
+    <%= f.submit 'Create Book' %>
+
+<% end %>
