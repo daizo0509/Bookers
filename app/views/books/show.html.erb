@@ -1,7 +1,7 @@
 
-<div><b>Title:</b><%= @book.title %></div>
+<p><strong>Title:</strong><%= @book.title %></p>
 
-<div><b>Body:</b><%= @book.body %></div>
+<p><strong>Body:</strong><%= @book.body %></p>
 
 <%= link_to"Edit", edit_book_path(@book) %>
 <%= link_to"Back", new_book_path(@book) %>

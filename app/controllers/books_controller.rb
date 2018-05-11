@@ -7,7 +7,7 @@ class BooksController < ApplicationController
   end
 
   def new
-  	  @books = Book.all.order(id: "DESC")
+  	  @books = Book.all.order(id: "ASC")
   	  @book = Book.new
   end
 
