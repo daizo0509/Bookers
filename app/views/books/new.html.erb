@@ -8,6 +8,8 @@
     </thead>
     <tbody>
       <% @books.each do |book| %>
+      <% if book.errors.any? %>
+      <% end %>
       <tr>
         <td class="title"><%= book.title %></td>
         <td class="body"><%= book.body %></td>

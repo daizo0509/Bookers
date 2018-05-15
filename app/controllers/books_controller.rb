@@ -7,8 +7,8 @@ class BooksController < ApplicationController
   end
 
   def new
-  	  @books = Book.all.order(id: "ASC")
-  	  @book = Book.new
+  	  @books = Book.all.oder("ASC")
+      @book = Book.new
   end
 
   def edit
@@ -16,10 +16,15 @@ class BooksController < ApplicationController
   end
 
   def create
-  	  book = Book.new(book_params)
-  	  book.save
-  	  redirect_to book_path(book)
+  	 @book = Book.new(book_params)
+     if @book.save
+     redirect_to book_path(@book)
+   else
+      @books = Book.all
+      render :new
+    end
   end
+
   def update
   	  book = Book.find(params[:id])
   	  book.update(book_params)
