@@ -7,7 +7,7 @@ class BooksController < ApplicationController
   end
 
   def new
-  	  @books = Book.all.oder("ASC")
+  	  @books = Book.all
       @book = Book.new
   end
 
