@@ -1,0 +1,45 @@
+<header class="navbar navbar-fixed-top navbar-inverse">
+  <div class="container">
+    <nav class="nav navbar-nav navbar-left">
+      <span>Bookers</span>
+    </nav>
+    <nav>
+      <ul class="nav navbar-nav navbar-right">
+          <li class="">
+            <%= link_to "home",user_path(current_user.id), method: :show %>
+          </li>
+          <li class=""><a class="glyphicon glyphicon-user" href="/users"> Users</a></li> <!-- ユーザー一覧　-->
+          <li class="">
+            <%= link_to "books",books_path,mehtod: :new %>
+          </li>
+          <li class="">
+            <%= link_to "logout",destroy_user_session_path, method: :delete %>
+          </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<table>
+	<thead>
+	  <tr>
+        <th>Title</th>
+        <th>Body</th>
+     </tr>
+    </thead>
+    <tbody>
+      <% @books.each do |book| %>
+      <% if book.errors.any? %>
+      <% end %>
+      <tr>
+        <td class="title"><%= book.title %></td>
+        <td class="body"><%= book.body %></td>
+        <td>
+
+          <%= link_to"Show", book_path(book.id) %>
+          <%= link_to"Edit", edit_book_path(book.id) %>
+          <%= link_to"Destroy", book_path(book.id), method: :delete, "data-confirm" =>"Are you sure?" %>
+        </td>
+      </tr>
+      <% end %>
+    </tbody>
+</table> 
