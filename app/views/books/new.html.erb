@@ -1,4 +1,24 @@
-<h1>Books</h1>
+<header class="navbar navbar-fixed-top navbar-inverse">
+  <div class="container">
+    <nav class="nav navbar-nav navbar-left">
+      <span>Bookers</span>
+    </nav>
+    <nav>
+      <ul class="nav navbar-nav navbar-right">
+          <li class="">
+            <%= link_to "home",user_path(current_user.id), method: :show %>
+          </li>
+          <li class=""><a class="glyphicon glyphicon-user" href="/users"> Users</a></li> <!-- ユーザー一覧　-->
+          <li class="">
+            <%= link_to "books",books_path,mehtod: :new %>
+          </li>
+          <li class="">
+            <%= link_to "logout",destroy_user_session_path, method: :delete %>
+          </li>
+      </ul>
+    </nav>
+  </div>
+</header>
 <table>
 	<thead>
 	  <tr>
